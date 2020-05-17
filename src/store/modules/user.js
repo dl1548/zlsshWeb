@@ -1,6 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
+import { Logger } from 'runjs/lib/common'
 
 const getDefaultState = () => {
   return {
@@ -33,11 +34,13 @@ const actions = {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
-        const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        const { data } = response        
+        commit('SET_TOKEN', data.access)
+        setToken(data.access)
         resolve()
+          
       }).catch(error => {
+        console.log(error);
         reject(error)
       })
     })
@@ -48,7 +51,9 @@ const actions = {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
         const { data } = response
-
+        
+        console.log(data);
+        
         if (!data) {
           reject('Verification failed, please Login again.')
         }
@@ -59,6 +64,8 @@ const actions = {
         commit('SET_AVATAR', avatar)
         resolve(data)
       }).catch(error => {
+        console.log(error);
+
         reject(error)
       })
     })
