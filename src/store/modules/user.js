@@ -1,7 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
-import { Logger } from 'runjs/lib/common'
+// import { Logger } from 'runjs/lib/common'
 
 const getDefaultState = () => {
   return {
@@ -27,7 +27,6 @@ const mutations = {
     state.avatar = avatar
   }
 }
-
 const actions = {
   // user login
   login({ commit }, userInfo) {
@@ -45,7 +44,6 @@ const actions = {
       })
     })
   },
-
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
@@ -70,7 +68,6 @@ const actions = {
       })
     })
   },
-
   // user logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
@@ -84,7 +81,6 @@ const actions = {
       })
     })
   },
-
   // remove token
   resetToken({ commit }) {
     return new Promise(resolve => {
