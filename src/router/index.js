@@ -71,6 +71,12 @@ export const constantRoutes = [
         meta: { title: '主机列表' }
       },
       {
+        path: 'hostlist2',
+        component: () => import('@/views/webssh/hostlist2'),
+        name: 'hostlist2',
+        meta: { title: '主机列表2' }
+      },
+      {
         path: 'history',
         component: () => import('@/views/webssh/history'),
         meta: { title: '连接历史  ' }
