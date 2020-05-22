@@ -50,7 +50,7 @@ function get_term_size() {
 }
 
 
-function websocket() {
+export function websocket() {
     var cols = get_term_size().cols;
     var rows = get_term_size().rows;
     var connect_info = get_connect_info();

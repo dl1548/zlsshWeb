@@ -54,7 +54,7 @@
 
 <script>
 import { getList } from '@/api/host'
-import { websocket } from '@/utils/webssh'
+// import { WS } from '@/utils/ssh-websocket'  // ws 方法
 
 export default {
   // filters: {

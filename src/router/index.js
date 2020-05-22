@@ -36,13 +36,12 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-
+  
   {
     path: '/',
     component: Layout,
@@ -71,15 +70,14 @@ export const constantRoutes = [
         meta: { title: '主机列表' }
       },
       {
-        path: 'hostlist2',
-        component: () => import('@/views/webssh/hostlist2'),
-        name: 'hostlist2',
-        meta: { title: '主机列表2' }
-      },
-      {
         path: 'history',
         component: () => import('@/views/webssh/history'),
         meta: { title: '连接历史  ' }
+      },
+      {
+        path: 'terminal',
+        component: () => import('@/views/webssh/sshconnect/test'),
+        meta: { title: 'terminal  ' }
       }
     ]
   },
